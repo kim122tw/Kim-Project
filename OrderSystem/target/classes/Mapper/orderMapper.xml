@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="orderMapper">
+	<insert id="add" parameterType="Model.porder">
+		insert into porder(orderId, customerName, orderDate, address, phone, totalPrice, orderDetailsId) 
+		values(#{orderId}, #{customerName}, #{orderDate}, #{address}, #{phone}, #{totalPrice}, #{orderDetailsId})	
+	</insert>
+	
+	<select id="queryAll" resultType="Model.porder">
+		select * from porder
+	</select>
+	
+	<select id="queryId" resultType="Model.porder">
+		select * from porder where orderId = #{orderId}
+	</select>
+	
+	<delete id="delete" parameterType="Model.porder">
+		delete from porder where id = #{id}
+	</delete>
+</mapper>

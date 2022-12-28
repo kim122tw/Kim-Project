@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<style>
+	form {
+		font-size: 35px;
+	}
+	input {
+		font-size: 25px;
+	}
+</style>
+</head>
+<body>
+
+<table width="600" align=center border=1>
+	<tr align="center">
+		<td colspan="3"><h1>loginSuccess</h1></td>
+	<tr>
+		<td colspan=3 align=center>welcome
+	<tr>
+		<td>name
+		<td><div th:text="${M.memberName}">
+		<td><form action="../update/toUpdate" method="post"><input type="hidden" name="name" value="s">
+															<input type="submit"></form>
+	<tr>
+		<td>username
+		<td><div th:text="${M.username}">
+		<td>
+	<tr>
+		<td>password
+		<td><div th:text="${M.password}">
+		<td><form action="../update/toUpdate" method="post"><input type="hidden" name="password" value="s">
+															<input type="submit"></form>
+	<tr>
+		<td>phone
+		<td><div th:text="${M.phone}">
+		<td><form action="../update/toUpdate" method="post"><input type="hidden" name="phone" value="s">
+															<input type="submit"></form>
+	<tr>
+		<td>address
+		<td><div th:text="${M.address}">
+		<td><form action="../update/toUpdate" method="post"><input type="hidden" name="address" value="s">
+															<input type="submit"></form>
+		
+	<tr>
+		<td>
+			<a href="loginSuccess">重新整理</a>
+</table>
+</body>
+</html>

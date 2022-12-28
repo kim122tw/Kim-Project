@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="orderDetailsMapper">
+	<insert id="add" parameterType="Model.orderDetails">
+		insert into orderDetails(orderDetailsId, bookId, bookName, bookQuantity, bookPrice) 
+		values(#{orderDetailsId}, #{bookId}, #{bookName}, #{bookQuantity}, #{bookPrice})
+	</insert>
+	
+	<select id="queryId" resultType="Model.orderDetails">
+		select * from orderDetails where orderDetailsId = #{orderDetailsId}
+	</select>
+	
+	<delete id="delete" parameterType="Model.orderDetails">
+		delete from orderDetails where orderDetailsId = #{orderDetailsId}
+	</delete>
+	
+</mapper>

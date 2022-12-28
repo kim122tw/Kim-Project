@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    url: jdbc:sqlserver://localhost;Database=company;trustServerCertificate=true
+    username: sa
+    password: 12345670
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver

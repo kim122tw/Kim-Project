@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bookMapper">
+	<insert id="add" parameterType="Model.book">
+		insert into book(bookId, bookName, bookPrice, bookInventory) 
+		values(#{bookId}, #{bookName}, #{bookPrice}, #{bookInventory})
+	</insert>
+	
+	<select id="query" resultType="Model.book">
+		select * from book
+	</select>
+	
+	<select id="queryName" resultType="Model.book">
+		select * from book where bookName = #{bookName}
+	</select>
+	
+	<update id="updateInventory" parameterType="Model.book">
+		update book set bookInventory = #{bookInventory} where bookName = #{bookName}
+	</update>
+</mapper>

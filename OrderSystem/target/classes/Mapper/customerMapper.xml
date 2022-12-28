@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="customerMapper">
+	<insert id="add" parameterType="Model.customer">
+		insert into customer(customerName, username, password, address, phone) 
+		values(#{customerName}, #{username}, #{password}, #{address}, #{phone})
+	</insert>
+	
+	<select id="queryCustomer" resultType="Model.customer" parameterType="map">
+		select * from customer where username = #{username} and password = #{password}
+	</select>
+	
+	<select id="queryUsername" resultType="Model.customer">
+		select * from customer where username = #{username}
+	</select>
+</mapper>
